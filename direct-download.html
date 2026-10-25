@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TubeFetch - Download File</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: #080808;
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    main {
+      max-width: 560px;
+      margin: 50px auto;
+      padding: 24px;
+      border: 1px solid #292929;
+      border-radius: 16px;
+      background: #111114;
+    }
+    h1 span { color: #ff2445; }
+    p { color: #b8bbc6; line-height: 1.6; }
+    input, button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    input {
+      background: #080808;
+      border: 1px solid #393943;
+      color: white;
+    }
+    button {
+      background: #e81032;
+      color: white;
+      border: 0;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #status { overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Tube<span>Fetch</span></h1>
+    <h2>Unduh file milikmu</h2>
+    <p>
+      Masukkan tautan langsung ke file MP4, MP3, atau file lain
+      yang kamu miliki atau diizinkan untuk diunduh.
+      Tautan video YouTube biasa tidak didukung di kolom ini.
+    </p>
+
+    <form id="downloadForm">
+      <input
+        id="fileUrl"
+        type="url"
+        placeholder="https://contoh.com/video.mp4"
+        required
+      >
+      <button type="submit">Buka file untuk diunduh</button>
+    </form>
+
+    <p id="status" role="status"></p>
+  </main>
+
+  <script>
+    const form = document.getElementById("downloadForm");
+    const input = document.getElementById("fileUrl");
+    const status = document.getElementById("status");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      let url;
+      try {
+        url = new URL(input.value.trim());
+      } catch {
+        status.textContent = "Tautan tidak valid.";
+        return;
+      }
+
+      if (url.protocol !== "https:") {
+        status.textContent = "Gunakan tautan HTTPS yang aman.";
+        return;
+      }
+
+      status.textContent =
+        "Membuka tautan file. Jika file tidak terunduh, " +
+        "server sumber mungkin tidak mengizinkan unduhan langsung.";
+
+      window.location.assign(url.href);
+    });
+  </script>
+</body>
+</html>
