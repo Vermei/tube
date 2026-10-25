@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <title>TubeFetch - YouTube Downloader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="#" class="logo">
+      <span class="logo-icon">▶</span>
+      Tube<span>Fetch</span>
+    </a>
+
+    <nav>
+      <a href="#converter" class="active">Video</a>
+      <a href="#converter">YouTube ke MP3</a>
+      <a href="#panduan">Bantuan</a>
+    </nav>
+
+    <div class="language">◎ Indonesia⌄</div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="converter">
+      <div class="youtube-icon">▶</div>
+
+      <h1>Konverter <span>YouTube</span> ke MP3</h1>
+      <p class="subtitle">
+        Tempel tautan video untuk memeriksa informasi dan format
+        yang tersedia dengan mudah.
+      </p>
+
+      <form id="converterForm">
+        <div class="input-box">
+          <span class="link-icon">↗</span>
+          <input
+            type="url"
+            id="videoUrl"
+            placeholder="Cari atau tempel link YouTube di sini"
+            aria-label="URL video"
+            required
+          >
+        </div>
+
+        <div class="buttons">
+          <button type="submit" class="btn-primary">
+            ↓ &nbsp; Periksa tautan
+          </button>
+          <button type="button" class="btn-secondary" id="pasteBtn">
+            ▣ &nbsp; Paste
+          </button>
+        </div>
+      </form>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <div class="result-card" id="resultCard" hidden>
+        <h3>Tautan berhasil diperiksa</h3>
+        <p id="resultText"></p>
+        <p class="note">
+          Untuk mengunduh, gunakan fitur resmi yang disediakan
+          pemilik konten atau platform.
+        </p>
+      </div>
+    </section>
+
+    <section class="description">
+      <p>
+        <strong>TubeFetch</strong> adalah konsep website untuk membantu
+        pengguna memeriksa tautan video dan menemukan pilihan akses
+        media yang sesuai. Antarmuka ini dirancang sederhana, cepat,
+        dan nyaman digunakan melalui browser.
+      </p>
+
+      <p>
+        Gunakan konten milik sendiri atau konten yang memang diizinkan
+        untuk diunduh. Pastikan penggunaanmu mematuhi hak cipta dan
+        ketentuan layanan platform terkait.
+      </p>
+    </section>
+
+    <section id="panduan">
+      <h2>Langkah-Langkah Menggunakan Website</h2>
+
+      <div class="steps">
+        <article class="step">
+          <div class="number">1</div>
+          <div>
+            <h3>Salin tautan video</h3>
+            <p>Buka video dan salin tautannya melalui menu Bagikan.</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="number">2</div>
+          <div>
+            <h3>Tempel link di kolom</h3>
+            <p>Masukkan URL video pada kolom yang tersedia di atas.</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="number">3</div>
+          <div>
+            <h3>Periksa tautan</h3>
+            <p>Website akan memeriksa apakah URL berasal dari YouTube.</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="number">4</div>
+          <div>
+            <h3>Pilih format yang tersedia</h3>
+            <p>Integrasikan sumber pemrosesan yang sah untuk konten yang diizinkan.</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="number">5</div>
+          <div>
+            <h3>Akses konten</h3>
+            <p>Ikuti opsi akses atau unduhan resmi yang tersedia.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="summary">
+      <h2>Ringkasan</h2>
+      <ul>
+        <li>Tampilan gelap dengan aksen merah.</li>
+        <li>Desain responsif untuk HP dan komputer.</li>
+        <li>Validasi dasar tautan YouTube.</li>
+        <li>Interaksi tanpa perlu memuat ulang halaman.</li>
+        <li>Dapat dikembangkan dengan backend untuk penggunaan yang diizinkan.</li>
+      </ul>
+
+      <h3 class="format-title">Format media</h3>
+      <div class="formats">
+        <span>MP3</span>
+        <span>MP4</span>
+        <span>M4A</span>
+        <span>WEBM</span>
+        <span>Audio</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 TubeFetch · Dibuat untuk penggunaan yang bertanggung jawab.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
