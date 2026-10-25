@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <title>Hasil Video - TubeFetch</title>
+  <link rel="stylesheet" href="result.css">
+  <script src="result.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="index.html">
+      <span class="logo-icon">▶</span>
+      Tube<span>Fetch</span>
+    </a>
+
+    <nav>
+      <a href="index.html">Video</a>
+      <a href="index.html#converter" class="active">YouTube ke MP3</a>
+      <a href="#footer">Bantuan</a>
+    </nav>
+
+    <span class="language">◎ Indonesia⌄</span>
+  </header>
+
+  <main class="page">
+    <div id="status" class="status" role="status" aria-live="polite">
+      Memuat informasi video...
+    </div>
+
+    <section class="result-layout">
+      <aside class="video-info">
+        <img id="thumbnail" class="thumbnail" alt="Thumbnail video">
+
+        <h1 id="videoTitle">Informasi video</h1>
+        <p id="channel" class="muted"></p>
+        <p id="duration" class="muted"></p>
+      </aside>
+
+      <section class="download-panel">
+        <div class="tabs" role="tablist" aria-label="Jenis media">
+          <button
+            class="tab active"
+            id="audioTab"
+            role="tab"
+            aria-selected="true"
+            aria-controls="formatList"
+            data-mode="audio">
+            ♫ Audio
+          </button>
+
+          <button
+            class="tab"
+            id="videoTab"
+            role="tab"
+            aria-selected="false"
+            aria-controls="formatList"
+            data-mode="video">
+            ▣ Video
+          </button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>TIPE FILE</th>
+                <th>FORMAT</th>
+                <th>AKSI</th>
+              </tr>
+            </thead>
+            <tbody id="formatList"></tbody>
+          </table>
+        </div>
+
+        <p class="disclaimer">
+          Pilihan unduhan hanya tersedia untuk file yang kamu miliki
+          atau memiliki izin untuk mengunduhnya.
+        </p>
+      </section>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="footer-links">
+      <a href="#footer">Tentang Kami</a>
+      <a href="#footer">Ketentuan Layanan</a>
+      <a href="#footer">Kebijakan Privasi</a>
+      <a href="#footer">Hubungi Kami</a>
+    </div>
+    <p>TubeFetch adalah proyek independen dan tidak berafiliasi dengan YouTube.</p>
+    <p>© 2026 TubeFetch</p>
+  </footer>
+</body>
+</html>
